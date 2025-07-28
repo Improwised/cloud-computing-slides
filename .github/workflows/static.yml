@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
   workflow_run:
-    workflows: ["Tests", "Spellcheck"]
+    workflows: ["Tests"]
     types:
       - completed
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
