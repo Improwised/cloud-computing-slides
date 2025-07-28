@@ -59,6 +59,18 @@
       margin-right: 20px;
     }
 
+    .presenter img.hussain {
+      width: 100px;
+      height: 90px;
+      border-radius: 50%;
+      margin-right: 50px;
+    }
+
+    .vcs {
+      /* width: 100px; */
+      height: 100px;
+    }
+
     .presenter-info {
       text-align: left;
     }
@@ -116,6 +128,12 @@
             </div>
           </div>
         </div>
+        <ul style="margin-top: 30px; font-size: 18px; list-style: none; column-count: 2; column-gap: 40px;">
+          <li class="fragment">☁️ Platform Engineering as a Service</li>
+          <li class="fragment">🔄 Cloud Infrastructure & DevOps</li>
+          <li class="fragment">🔧 Product Modernization & Cloud Migration</li>
+          <li class="fragment">🧭 Technology Consulting & Cost Optimization</li>
+        </ul>
         <aside class="notes">
           A brief introduction to Improwised and what we do. Our goal is to empower businesses through
           platform which can help them to fast implementation.
@@ -134,7 +152,7 @@
           </div>
         </div>
         <div class="presenter">
-          <img src="./img/hussain.webp" alt="Hussain Gandhi" />
+          <img class="hussain" src="./img/hussain.webp" alt="Hussain Gandhi" />
           <div class="presenter-info">
             <b>Hussain Gandhi</b><br>
             DevOps Engineer at Improwised Technologies
@@ -215,33 +233,55 @@
 
       <!-- Version Control -->
       <section>
-        <h2>Version Control with Git</h2>
-        <ul class="content">
-          <li>The foundation for collaboration and automation.</li>
-          <li>Tracks changes, allows for branching, and enables CI/CD.</li>
-          <li>GitFlow and other branching strategies are key for team collaboration.</li>
-          <li>Essential for Infrastructure as Code and GitOps.</li>
-        </ul>
-        <aside class="notes">
-          Everything in modern software development starts with version control. We'll briefly touch on why
-          Git is so important, especially in the context of cloud infrastructure and automation.
-        </aside>
+        <section>
+          <h2>Version Control</h2>
+          <img class="vcs" src="./img/bitkeeper.png" alt="BitKeeper" />
+          <img class="vcs" src="./img/git.png" alt="Git" /><br>
+          <img class="vcs" src="./img/subversion.png" alt="Subversion" />
+          <img class="vcs" src="./img/mercurial.png" alt="Mercurial" />
+
+        </section>
+        <section>
+          <h2>Git</h2>
+          <img src="./img/linus.jpeg" alt="Linus Torvalds" />
+          <p>Linus Torvalds created Git in 2005 while working on the Linux kernel.</p>
+        </section>
+        <section>
+          <h2>Version Control with Git</h2>
+          <ul class="content">
+            <li>It is distributed version control system.</li>
+            <li>The foundation for collaboration and automation.</li>
+            <li>Tracks changes, allows for branching, and enables CI/CD.</li>
+            <li>GitFlow and other branching strategies are key for team collaboration.</li>
+            <li>Essential for Infrastructure as Code and GitOps.</li>
+          </ul>
+          <aside class="notes">
+            Everything in modern software development starts with version control. We'll briefly touch on why
+            Git is so important, especially in the context of cloud infrastructure and automation.
+          </aside>
+        </section>
       </section>
 
       <!-- Core Concepts -->
       <section>
-        <h2>Core Cloud Concepts</h2>
-        <ul class="content">
-          <li><b>High Performance:</b> Choosing the right CPU, Memory, and Storage (SSD, IOPS).</li>
+        <section>
+          <h2>Core Cloud Concepts</h2>
+          <ul class="content">
+            <li><b>High Performance:</b> Choosing the right CPU, Memory, and Storage (SSD, IOPS).</li>
+            <img class="fragment" src="./img/storage.jpeg">
+          </ul>
+        </section>
+        <section>
           <li><b>Resilience:</b> Using rolling deployments, health checks, and planning for disaster recovery.
           </li>
           <li><b>Efficiency & Cost Optimization:</b> Leveraging Spot Instances, Graviton processors, and
             serverless to reduce costs.</li>
-        </ul>
-        <aside class="notes">
-          These are the pillars of a well-architected cloud environment. We're not just building things, we're
-          building them to be fast, reliable, and cost-effective.
-        </aside>
+          </ul>
+          <aside class="notes">
+            These are the pillars of a well-architected cloud environment. We're not just building things, we're
+            building them to be fast, reliable, and cost-effective.
+          </aside>
+        </section>
       </section>
 
       <!-- Security -->
@@ -532,19 +572,27 @@
 
       <!-- Pets vs Cattle -->
       <section>
-        <h3>Pets vs. Cattle</h3>
-        <ul class="content">
-          <li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when
-            they die.</li>
-          <li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced.
-            You don't care if one dies; you just get another one.</li>
-          <li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and
-            resilience.</li>
-        </ul>
-        <aside class="notes">
-          This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for
-          immutable, disposable infrastructure.
-        </aside>
+        <section>
+          <h3>Pets vs. Cattle</h3>
+          <img src="./img/petvscattle.jpeg" alt="Pets vs. Cattle">
+        </section>
+<section>
+          <h3>Pets vs. Cattle</h3>
+          <ul class="content">
+            <li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when
+              they die.</li>
+            <li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced.
+              You don't care if one dies; you just get another one.</li>
+            <li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and
+              resilience.</li>
+          </ul>
+          <aside class="notes">
+            This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for
+            immutable, disposable infrastructure.
+          </aside>
+        </section>
+
+
       </section>
 
       <!-- Day 2 Section -->
