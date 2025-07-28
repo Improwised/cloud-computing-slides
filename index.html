@@ -2,464 +2,699 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>Cloud Computing: Deep dive into AWS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="dist/reset.css">
-	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
-	<link rel="stylesheet" href="plugin/copycode/copycode.css">
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	<style>
-		:root {
-			--r-main-font-size: 22px;
-		}
+    <meta charset="utf-8">
+    <title>Cloud Computing: Deep dive into AWS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="plugin/copycode/copycode.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        :root {
+            --r-main-font-size: 22px;
+        }
 
-		.workshop-title {
-			font-size: 2.5em;
-			margin-bottom: 0.5em;
-		}
+        .workshop-title {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
 
-		.subtitle {
-			font-size: 1.2em;
-			margin-bottom: 1em;
-		}
+        .subtitle {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
 
-		.content {
-			text-align: left;
-			font-size: 1em;
-		}
+        .content {
+            text-align: left;
+            font-size: 1em;
+        }
 
-		.content ul {
-			list-style-type: disc;
-			margin-left: 40px;
-		}
+        .content ul {
+            list-style-type: disc;
+            margin-left: 40px;
+        }
 
-		.content li {
-			margin-bottom: 0.5em;
-		}
+        .content li {
+            margin-bottom: 0.5em;
+        }
 
-		.logo {
-			position: fixed;
-			top: 20px;
-			right: 20px;
-			height: 60px;
-			z-index: 10;
-		}
+        .logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            height: 60px;
+            z-index: 10;
+        }
 
-		.presenter {
-			display: flex;
-			align-items: center;
-			margin-top: 20px;
-		}
+        .presenter {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
 
-		.presenter img {
-			width: 100px;
-			border-radius: 50%;
-			margin-right: 20px;
-		}
+        .presenter img {
+            width: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
 
-		.presenter-info {
-			text-align: left;
-		}
+        .presenter-info {
+            text-align: left;
+        }
 
-		.section-title {
-			text-align: center;
-			margin-bottom: 1em;
-		}
+        .section-title {
+            text-align: center;
+            margin-bottom: 1em;
+        }
 
-		.flex-container {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 20px;
-		}
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
 
-		.col {
-			flex: 1;
-			text-align: left;
-		}
-	</style>
+        .col {
+            flex: 1;
+            text-align: left;
+        }
+    </style>
 </head>
 
 <body>
-	<header>
-		<img class="logo" src="https://www.improwised.com/img/logo.png" alt="Improwised Technologies">
-	</header>
-	<div class="reveal">
-		<div class="slides">
-			<!-- Introduction -->
-			<section>
-				<h1 class="workshop-title">Cloud Computing: A Deep Dive into AWS</h1>
-				<p class="subtitle">Facilitators: Munir Khakhi & Hussain Gandhi</p>
-				<aside class="notes">
-					Welcome everyone to our workshop on Cloud Computing with a focus on AWS. Over the next two days, we'll explore core concepts and practical applications to help you build robust, scalable, and efficient solutions on the cloud.
-				</aside>
-			</section>
+    <header>
+        <img class="logo" src="https://www.improwised.com/img/logo.png" alt="Improwised Technologies">
+    </header>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Introduction -->
+            <section>
+                <h1 class="workshop-title">Cloud Computing: A Deep Dive into AWS</h1>
+                <p class="subtitle">Facilitators: Munir Khakhi & Hussain Gandhi</p>
+                <aside class="notes">
+                    Welcome everyone to our workshop on Cloud Computing with a focus on AWS. Over the next two days,
+                    we'll explore core concepts and practical applications to help you build robust, scalable, and
+                    efficient solutions on the cloud.
+                </aside>
+            </section>
 
-			<!-- Who We Are -->
-			<section>
-				<h2 class="section-title">Who We Are</h2>
-				<div class="flex-container">
-					<img src="https://www.improwised.com/img/logo.png" alt="Improwised Technologies Logo" style="width: 350px; border-radius: 12px;" />
-					<div class="col content">
-						<p>We design self-service, high-performing platforms that accelerate development, optimize operations, and drive seamless scalability.</p>
-						<p class="fragment" style="margin-top: 1em;">With 13+ years of expertise, we empower 100+ businesses worldwide to achieve up to 3x faster deployment cycles, reduce costs by 30%, and maintain 99.99% uptime.</p>
-					</div>
-				</div>
-				<aside class="notes">
-					A brief introduction to Improwised and what we do. Our goal is to empower businesses through platform which can help them to fast implementation.
-				</aside>
-			</section>
+            <!-- Who We Are -->
+            <section>
+                <h2 class="section-title">Who We Are</h2>
+                <div class="flex-container">
+                    <img src="https://www.improwised.com/img/logo.png" alt="Improwised Technologies Logo"
+                        style="width: 350px; border-radius: 12px;" />
+                    <div class="col content">
+                        <p>We design self-service, high-performing platforms that accelerate development, optimize
+                            operations, and drive seamless scalability.</p>
+                        <p class="fragment" style="margin-top: 1em;">With 13+ years of expertise, we empower 100+
+                            businesses worldwide to achieve up to 3x faster deployment cycles, reduce costs by 30%, and
+                            maintain 99.99% uptime.</p>
+                    </div>
+                </div>
+                <aside class="notes">
+                    A brief introduction to Improwised and what we do. Our goal is to empower businesses through
+                    platform which can help them to fast implementation.
+                </aside>
+            </section>
 
-			<!-- Presenters -->
-			<section>
-				<h2 class="section-title">Meet the Presenters</h2>
-				<div class="presenter">
-					<img src="./img/munir.jpg" alt="Munir Khakhi" />
-					<div class="presenter-info">
-						<b>Munir Khakhi</b><br>
-						Head of Engineering at Improwised Technologies<br>
-						Local community speaker & OSS contributor
-					</div>
-				</div>
-				<div class="presenter">
-					<img src="./img/hussain.webp" alt="Hussain Gandhi" />
-					<div class="presenter-info">
-						<b>Hussain Gandhi</b><br>
-						DevOps Engineer at Improwised Technologies
-					</div>
-				</div>
-				<aside class="notes">
-					Let's introduce ourselves. We're excited to be here and share our experience with you.
-				</aside>
-			</section>
+            <!-- Presenters -->
+            <section>
+                <h2 class="section-title">Meet the Presenters</h2>
+                <div class="presenter">
+                    <img src="./img/munir.jpg" alt="Munir Khakhi" />
+                    <div class="presenter-info">
+                        <b>Munir Khakhi</b><br>
+                        Head of Engineering at Improwised Technologies<br>
+                        Local community speaker & OSS contributor
+                    </div>
+                </div>
+                <div class="presenter">
+                    <img src="./img/hussain.webp" alt="Hussain Gandhi" />
+                    <div class="presenter-info">
+                        <b>Hussain Gandhi</b><br>
+                        DevOps Engineer at Improwised Technologies
+                    </div>
+                </div>
+                <aside class="notes">
+                    Let's introduce ourselves. We're excited to be here and share our experience with you.
+                </aside>
+            </section>
 
-			<!-- Interaction slide. Know your Audience -->
+            <!-- Interaction slide. Know your Audience -->
 
-			<!-- Agenda -->
-			<section>
-				<h2 class="section-title">Workshop Agenda</h2>
-				<div class="flex-container">
-					<div class="col">
-						<h3>Day 1: Foundations</h3>
-						<ul class="content">
-							<li>The Twelve-Factor App</li>
-							<li>Version Control</li>
-							<li>Core Cloud Concepts</li>
-							<li>Security Deep Dive</li>
-							<li>Storage Solutions (S3, EBS)</li>
-							<li>Compute (EC2, Lightsail)</li>
-							<li>Monitoring with CloudWatch</li>
-							<li>Pets vs. Cattle Analogy</li>
-						</ul>
-					</div>
-					<div class="col">
-						<h3>Day 2: Advanced Topics</h3>
-						<ul class="content">
-							<li>Recap</li>
-							<li>Containers (ECR, ECS, EKS, Fargate)</li>
-							<li>Serverless Computing (Lambda)</li>
-							<li>CI/CD & GitOps</li>
-							<li>Infrastructure as Code (IaaC)</li>
-							<li>API Management</li>
-							<li>Q&A and Feedback</li>
-						</ul>
-					</div>
-				</div>
-				<aside class="notes">
-					Here's a breakdown of what we'll cover. Day 1 is all about the Pet. Day 2 will build on that with more advanced, hands-on topics.
-				</aside>
-			</section>
+            <!-- Agenda -->
+            <section>
+                <h2 class="section-title">Workshop Agenda</h2>
+                <div class="flex-container">
+                    <div class="col">
+                        <h3>Day 1: Foundations</h3>
+                        <ul class="content">
+                            <li>The Twelve-Factor App</li>
+                            <li>Version Control</li>
+                            <li>Core Cloud Concepts</li>
+                            <li>Security Deep Dive</li>
+                            <li>Storage Solutions (S3, EBS)</li>
+                            <li>Compute (EC2, Lightsail)</li>
+                            <li>Monitoring with CloudWatch</li>
+                            <li>Pets vs. Cattle Analogy</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Day 2: Advanced Topics</h3>
+                        <ul class="content">
+                            <li>Recap</li>
+                            <li>Containers (ECR, ECS, EKS, Fargate)</li>
+                            <li>Serverless Computing (Lambda)</li>
+                            <li>CI/CD & GitOps</li>
+                            <li>Infrastructure as Code (IaC)</li>
+                            <li>API Management</li>
+                            <li>Q&A and Feedback</li>
+                        </ul>
+                    </div>
+                </div>
+                <aside class="notes">
+                    Here's a breakdown of what we'll cover. Day 1 is all about the Pet. Day 2 will build on that with
+                    more advanced, hands-on topics.
+                </aside>
+            </section>
 
-			<!-- Day 1 Section -->
-			<section>
-				<h2 class="section-title">Day 1: Foundations</h2>
-			</section>
+            <!-- Day 1 Section -->
+            <section>
+                <h2 class="section-title">Day 1: Foundations</h2>
+            </section>
 
-			<!-- 12 Factor App -->
-			<section>
-				<h3>The Twelve-Factor App</h3>
-				<p class="content">A methodology for building modern, scalable, and maintainable software-as-a-service apps.</p>
-				<ul class="content" style="font-size: 0.8em; margin-top: 1em;">
-					<li>I. Codebase: One codebase, many deploys</li>
-					<li>II. Dependencies: Explicitly declare and isolate</li>
-					<li>III. Config: Store in the environment</li>
-					<li>IV. Backing Services: Treat as attached resources</li>
-					<li>V. Build, release, run: Strict separation</li>
-					<li>VI. Processes: Stateless</li>
-					<li>VII. Port binding: Export services via port binding</li>
-					<li>VIII. Concurrency: Scale out via the process model</li>
-					<li>IX. Disposability: Fast startup and graceful shutdown</li>
-					<li>X. Dev/prod parity: Keep environments similar</li>
-					<li>XI. Logs: Treat as event streams</li>
-					<li>XII. Admin processes: Run as one-off tasks</li>
-				</ul>
-				<aside class="notes">
-					We'll start with the 12-Factor App principles. These are crucial for cloud-native applications. They guide you to create applications that are easy to deploy, scale, and maintain.
-				</aside>
-			</section>
+            <!-- 12 Factor App -->
+            <section>
+                <h2>The Twelve-Factor App</h2>
+                A methodology for building modern, scalable, and maintainable software-as-a-service
+                apps.
+                <ul class="content" style="font-size: 0.8em; margin-top: 1em;">
+                    <li>I. Codebase: One codebase, many deploys</li>
+                    <li>II. Dependencies: Explicitly declare and isolate</li>
+                    <li>III. Config: Store in the environment</li>
+                    <li>IV. Backing Services: Treat as attached resources</li>
+                    <li>V. Build, release, run: Strict separation</li>
+                    <li>VI. Processes: Stateless</li>
+                    <li>VII. Port binding: Export services via port binding</li>
+                    <li>VIII. Concurrency: Scale out via the process model</li>
+                    <li>IX. Disposability: Fast startup and graceful shutdown</li>
+                    <li>X. Dev/prod parity: Keep environments similar</li>
+                    <li>XI. Logs: Treat as event streams</li>
+                    <li>XII. Admin processes: Run as one-off tasks</li>
+                </ul>
+                <aside class="notes">
+                    We'll start with the 12-Factor App principles. These are crucial for cloud-native applications. They
+                    guide you to create applications that are easy to deploy, scale, and maintain.
+                </aside>
+            </section>
 
-			<!-- Version Control -->
-			<section>
-				<h3>Version Control with Git</h3>
-				<ul class="content">
-					<li>The foundation for collaboration and automation.</li>
-					<li>Tracks changes, allows for branching, and enables CI/CD.</li>
-					<li>GitFlow and other branching strategies are key for team collaboration.</li>
-					<li>Essential for Infrastructure as Code and GitOps.</li>
-				</ul>
-				<aside class="notes">
-					Everything in modern software development starts with version control. We'll briefly touch on why Git is so important, especially in the context of cloud infrastructure and automation.
-				</aside>
-			</section>
+            <!-- Version Control -->
+            <section>
+                <h2>Version Control with Git</h2>
+                <ul class="content">
+                    <li>The foundation for collaboration and automation.</li>
+                    <li>Tracks changes, allows for branching, and enables CI/CD.</li>
+                    <li>GitFlow and other branching strategies are key for team collaboration.</li>
+                    <li>Essential for Infrastructure as Code and GitOps.</li>
+                </ul>
+                <aside class="notes">
+                    Everything in modern software development starts with version control. We'll briefly touch on why
+                    Git is so important, especially in the context of cloud infrastructure and automation.
+                </aside>
+            </section>
 
-			<!-- Core Concepts -->
-			<section>
-				<h3>Core Cloud Concepts</h3>
-				<ul class="content">
-					<li><b>High Performance:</b> Choosing the right CPU, Memory, and Storage (SSD, IOPS).</li>
-					<li><b>Resilience:</b> Using rolling deployments, health checks, and planning for disaster recovery.</li>
-					<li><b>Efficiency & Cost Optimization:</b> Leveraging Spot Instances, Graviton processors, and serverless to reduce costs.</li>
-				</ul>
-				<aside class="notes">
-					These are the pillars of a well-architected cloud environment. We're not just building things, we're building them to be fast, reliable, and cost-effective.
-				</aside>
-			</section>
+            <!-- Core Concepts -->
+            <section>
+                <h2>Core Cloud Concepts</h2>
+                <ul class="content">
+                    <li><b>High Performance:</b> Choosing the right CPU, Memory, and Storage (SSD, IOPS).</li>
+                    <li><b>Resilience:</b> Using rolling deployments, health checks, and planning for disaster recovery.
+                    </li>
+                    <li><b>Efficiency & Cost Optimization:</b> Leveraging Spot Instances, Graviton processors, and
+                        serverless to reduce costs.</li>
+                </ul>
+                <aside class="notes">
+                    These are the pillars of a well-architected cloud environment. We're not just building things, we're
+                    building them to be fast, reliable, and cost-effective.
+                </aside>
+            </section>
 
-			<!-- Security -->
-			<section>
-				<h3>Security: A Deep Dive</h3>
-				<div class="flex-container">
-					<img src="./img/aws-iam.svg" alt="IAM Logo" style="height: 80px;">
-					<div class="col content">
-						<h4>IAM: Identity and Access Management</h4>
-						<ul>
-							<li>Manage users, groups, roles, and policies.</li>
-							<li>Principle of Least Privilege: Grant only the necessary permissions.</li>
-						</ul>
-					</div>
-				</div>
-				<ul class="content" style="margin-top: 1em;">
-					<li><b>VPC & Security Groups:</b> Isolate resources and control traffic.</li>
-					<li><b>Encryption:</b> Protect data at rest and in transit.</li>
-					<li><b>Compliance:</b> Use tools like AWS Config and CloudTrail for auditing.</li>
-				</ul>
-				<aside class="notes">
-					Hussain will lead this section. Security is job zero in the cloud. We'll cover how to control access, secure your network, and ensure compliance. A demo will follow.
-				</aside>
-			</section>
+            <!-- Security -->
+            <section>
+                <section>
+                    <h2>Security: A Deep Dive</h2>
+                    <aside class="notes">
+                        Hussain will lead this section. Security is job zero in the cloud. We'll cover how to control
+                        access, secure your network, and ensure compliance. A demo will follow.
+                    </aside>
+                </section>
+                <section>
+                    <h3>What is cloud security?</h3>
+                    <ul class="content">
+                        <li>Protecting data, applications, and infrastructure in the cloud.</li>
+                        <li>Ensuring confidentiality, integrity, and availability of resources.</li>
+                        <li>Implementing security best practices and compliance standards.</li>
+                    </ul>
+                    <aside class="notes">
+                        We'll discuss how AWS helps you secure your resources and what you need to do to keep your
+                        applications safe.
+                    </aside>
+                </section>
+                <section>
+                    <h3>What are some cloud security challenges?</h3>
+                    <ul class="content">
+                        <li>Misconfigured access controls and permissions.</li>
+                        <li>Data breaches due to insecure APIs or endpoints.</li>
+                        <li>Shared responsibility confusion between provider and customer.</li>
+                        <li>Insufficient monitoring and logging.</li>
+                        <li>Compliance with industry regulations.</li>
+                        <li>Managing secrets and credentials securely.</li>
+                    </ul>
+                    <aside class="notes">
+                        Cloud security comes with unique challenges. We'll discuss common pitfalls and how to address
+                        them using AWS best practices.
+                    </aside>
+                </section>
+                <section>
+                    <h3>What types of cloud security solutions are available on AWS?</h3>
+                    <ul class="content">
+                        <li><b>IAM (Identity & Access Management):</b> Manage users, roles, and permissions.</li>
+                        <li><b>VPC Security:</b> Network isolation, security groups, and NACLs.</li>
+                        <li><b>Encryption:</b> AWS KMS for key management, S3/EBS encryption, TLS for data in transit.
+                        </li>
+                        <li><b>Monitoring & Auditing:</b> CloudTrail, Config, GuardDuty, Security Hub.</li>
+                        <li><b>Web Application Firewall (WAF):</b> Protects against common web exploits.</li>
+                        <li><b>Secrets Management:</b> AWS Secrets Manager and Parameter Store.</li>
+                        <li><b>Compliance Tools:</b> Artifact, Audit Manager, and Inspector.</li>
+                    </ul>
+                    <aside class="notes">
+                        AWS offers a wide range of security solutions, from identity management to encryption and
+                        compliance. We'll discuss how these tools help you secure your cloud workloads.
+                    </aside>
+                </section>
+                <section>
+                    <div class="flex-container">
+                        <img src="./img/aws-iam.png" alt="IAM Logo" style="height: 80px;">
+                        <div class="col content">
+                            <h3>IAM (Identity and Access Management)</h3>
+                            <ul>
+                                <li>Manage users, groups, roles, and policies.</li>
+                                <li>Principle of Least Privilege: Grant only the necessary permissions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        IAM is the cornerstone of AWS security. It allows you to control who can access your resources
+                        and what they can do with them. We'll cover best practices for setting up IAM policies and
+                        roles.
+                        Demo for creating a user, roles, policies and assigning permissions.
+                    </aside>
+                </section>
+            </section>
 
-			<!-- Storage -->
-			<section>
-				<h3>Storage Solutions</h3>
-				<div class="flex-container">
-					<div class="col">
-						<h4>S3 & Glacier</h4>
-						<img src="./img/aws-s3-Logo.svg" alt="S3 Logo" style="height: 80px;">
-						<ul class="content">
-							<li>Object storage for scalability and durability.</li>
-							<li>Lifecycle policies for cost management.</li>
-							<li>Glacier for long-term archival.</li>
-						</ul>
-					</div>
-					<div class="col">
-						<h4>EBS (Elastic Block Store)</h4>
-						<img src="./img/aws-ebs.png" alt="EBS Logo" style="height: 80px;">
-						<ul class="content">
-							<li>Persistent block storage for EC2 instances.</li>
-							<li>Different volume types for various performance needs.</li>
-						</ul>
-					</div>
-				</div>
-				<aside class="notes">
-					Another section led by Hussain. We'll discuss the two main types of storage in AWS and when to use each. A demo will showcase S3 features.
-				</aside>
-			</section>
+            <!-- Storage -->
+            <section>
+                <section>
+                    <h2>Storage Solutions: S3 & EBS</h2>
+                    <aside class="notes">
+                        Hussain will lead this section. We'll cover AWS's main storage offerings—S3 and EBS—explaining
+                        their
+                        use cases, features, and best practices. A demo will follow.
+                    </aside>
+                </section>
+                <section>
+                    <div class="flex-container">
+                        <div class="col">
+                            <h3>S3 (Simple Storage Service)</h3>
+                            <img src="./img/aws-s3.png" alt="S3 Logo" style="height: 80px;">
+                            <ul class="content">
+                                <li>Object storage for files, backups, and static assets.</li>
+                                <li>Highly scalable, durable, and available.</li>
+                                <li>Supports lifecycle policies, versioning, and cross-region replication.</li>
+                                <li>Integrates with Glacier for archival storage.</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h3>EBS (Elastic Block Store)</h3>
+                            <img src="./img/aws-ebs.png" alt="EBS Logo" style="height: 80px;">
+                            <ul class="content">
+                                <li>Block storage for EC2 instances (like a hard drive).</li>
+                                <li>Persistent, encrypted, and snapshot-capable.</li>
+                                <li>Multiple volume types for performance and cost optimization.</li>
+                                <li>Can be resized and attached/detached from instances.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        S3 is ideal for storing files and backups, while EBS is used for persistent storage attached to
+                        EC2. We'll discuss when to use each and show a demo of S3 features.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Common Use Cases</h3>
+                    <ul class="content">
+                        <li><b>S3:</b> Static website hosting, backup and restore, big data analytics, media storage.
+                        </li>
+                        <li><b>EBS:</b> Databases, file systems, application data requiring low latency and high
+                            throughput.</li>
+                    </ul>
+                    <aside class="notes">
+                        We'll highlight typical scenarios for S3 and EBS, helping you choose the right storage for your
+                        workload.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Best Practices</h3>
+                    <ul class="content">
+                        <li>Enable encryption for sensitive data (S3 and EBS).</li>
+                        <li>Use lifecycle policies to manage costs in S3.</li>
+                        <li>Regularly back up EBS volumes using snapshots.</li>
+                        <li>Monitor usage and set alerts for unusual activity.</li>
+                    </ul>
+                    <aside class="notes">
+                        Security and cost management are key. We'll cover how to protect your data and optimize storage
+                        expenses.
+                    </aside>
+                </section>
+            </section>
 
-			<!-- Compute Part 1 -->
-			<section>
-				<h3>Compute: EC2 & Lightsail</h3>
-				<ul class="content">
-					<li><b>EC2 (Elastic Compute Cloud):</b> The workhorse of AWS. Virtual servers in the cloud.</li>
-					<li><b>Lightsail:</b> A simplified way to get started with virtual private servers.</li>
-					<li>Demo: Launching an EC2 instance and connecting to it.</li>
-				</ul>
-				<aside class="notes">
-					Hussain will demonstrate how to get a server up and running in AWS. This is the fundamental building block for many applications.
-				</aside>
-			</section>
+            <!-- Compute Part 1 -->
+            <section>
+                <section>
+                    <h2>Compute Solutions: EC2 & Lightsail</h2>
+                    <aside class="notes">
+                        Hussain will lead this section. We'll cover AWS's main compute offerings—EC2 and
+                        Lightsail—explaining their use cases, features, and best practices. A demo will follow.
+                    </aside>
+                </section>
+                <section>
+                    <div class="flex-container">
+                        <div class="col">
+                            <h3>EC2 (Elastic Compute Cloud)</h3>
+                            <img src="./img/aws-ec2.png" alt="EC2 Logo" style="height: 80px;">
+                            <ul class="content">
+                                <li>Scalable virtual servers for any workload.</li>
+                                <li>Wide choice of instance types (CPU, memory, storage optimized).</li>
+                                <li>Supports auto-scaling, load balancing, and custom AMIs.</li>
+                                <li>Flexible networking and security options.</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <h3>Lightsail</h3>
+                            <img src="./img/aws-lightsail.png" alt="Lightsail Logo" style="height: 80px;">
+                            <ul class="content">
+                                <li>Easy-to-use VPS for quick deployments.</li>
+                                <li>Pre-configured blueprints for common stacks (WordPress, LAMP, etc.).</li>
+                                <li>Simple pricing and management interface.</li>
+                                <li>Great for small apps, dev/test, and learning AWS basics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        EC2 is ideal for flexible, scalable workloads, while Lightsail is perfect for quick, simple
+                        deployments. We'll discuss when to use each and show a demo of launching instances.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Common Use Cases</h3>
+                    <ul class="content">
+                        <li><b>EC2:</b> Web servers, application servers, batch processing, custom environments,
+                            enterprise workloads.</li>
+                        <li><b>Lightsail:</b> Small websites, blogs, dev/test environments, quick prototypes, learning
+                            AWS basics.</li>
+                    </ul>
+                    <aside class="notes">
+                        We'll highlight typical scenarios for EC2 and Lightsail, helping you choose the right compute
+                        service for your workload.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Best Practices</h3>
+                    <ul class="content">
+                        <li>Use auto-scaling and load balancing for high availability (EC2).</li>
+                        <li>Choose the right instance type for performance and cost optimization.</li>
+                        <li>Regularly update and patch your instances.</li>
+                        <li>Enable monitoring and set alerts for resource usage.</li>
+                        <li>Secure access using IAM roles and security groups.</li>
+                    </ul>
+                    <aside class="notes">
+                        We'll cover how to optimize, secure, and manage your compute resources efficiently.
+                    </aside>
+                </section>
+            </section>
 
-			<!-- Monitoring -->
-			<section>
-				<h3>Monitoring with CloudWatch</h3>
-				<img src="./img/aws-cloudwatch.png" alt="CloudWatch Logo" style="height: 100px;">
-				<ul class="content">
-					<li>Collect metrics, logs, and traces.</li>
-					<li>Create alarms to be notified of issues.</li>
-					<li>Build dashboards to visualize the health of your applications.</li>
-					<li>Demo: Setting up a CloudWatch alarm.</li>
-				</ul>
-				<aside class="notes">
-					If you can't measure it, you can't improve it. Hussain will show how to use CloudWatch to keep an eye on your AWS resources.
-				</aside>
-			</section>
+            <!-- Monitoring -->
+            <section>
+                <section>
+                    <h2>Monitoring with CloudWatch</h2>
+                    <aside class="notes">
+                        Hussain will lead this section. Monitoring is essential for maintaining the health and
+                        performance of your cloud resources. We'll explore CloudWatch features and best practices,
+                        followed by a demo.
+                    </aside>
+                </section>
+                <section>
+                    <img src="./img/aws-cloudwatch.png" alt="CloudWatch Logo" style="height: 80px;">
+                    <h3>CloudWatch Features</h3>
+                    <aside class="notes"></aside>
+                    CloudWatch provides both metrics and logs, allowing you to monitor and respond to events in real
+                    time.
+                    We'll show how to set up alarms and dashboards for proactive monitoring.
+                    </aside>
+                </section>
+                <section>
+                    <h4>Metrics</h4>
+                    <ul class="content">
+                        <li>Time-series data points for system/application variables</li>
+                        <li>Examples: CPU usage, network traffic, error rates</li>
+                        <li>Built-in metrics for 70+ AWS services</li>
+                        <li>Custom metrics for app-specific monitoring</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Logs</h4>
+                    <ul class="content">
+                        <li>Centralized log storage from AWS resources & apps</li>
+                        <li>View, search, filter, and archive logs</li>
+                        <li>Extract metrics from logs using filters</li>
+                        <li>Analyze logs interactively with Logs Insights</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Alarms</h4>
+                    <ul class="content">
+                        <li>Set thresholds for metrics</li>
+                        <li>Receive notifications when thresholds are breached</li>
+                        <li>Trigger actions (SNS, EC2, Auto Scaling)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Dashboards</h4>
+                    <ul class="content">
+                        <li>Customizable visualizations of metrics & logs</li>
+                        <li>Use graphs, charts, tables to track performance</li>
+                        <li>Identify trends and troubleshoot issues</li>
+                        <li>Automatic dashboards for AWS services</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Common Use Cases</h3>
+                    <ul class="content">
+                        <li>Monitor EC2 instance health and resource usage.</li>
+                        <li>Track application errors and performance via logs.</li>
+                        <li>Set up alarms for cost management and security events.</li>
+                        <li>Visualize service health with custom dashboards.</li>
+                    </ul>
+                    <aside class="notes">
+                        We'll highlight typical scenarios where CloudWatch helps you maintain reliability, security, and
+                        cost control.
+                    </aside>
+                </section>
+                <section>
+                    <h3>Best Practices</h3>
+                    <ul class="content">
+                        <li>Enable detailed monitoring for critical resources.</li>
+                        <li>Set up alarms for key metrics and thresholds.</li>
+                        <li>Centralize logs for easier troubleshooting and compliance.</li>
+                        <li>Regularly review dashboards and update them as your environment evolves.</li>
+                    </ul>
+                    <aside class="notes">
+                        Effective monitoring is proactive, not reactive. We'll discuss how to use CloudWatch to stay
+                        ahead of issues and optimize your AWS workloads.
+                    </aside>
+                </section>
+            </section>
 
-			<!-- Pets vs Cattle -->
-			<section>
-				<h3>Pets vs. Cattle</h3>
-				<ul class="content">
-					<li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when they die.</li>
-					<li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced. You don't care if one dies; you just get another one.</li>
-					<li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and resilience.</li>
-				</ul>
-				<aside class="notes">
-					This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for immutable, disposable infrastructure.
-				</aside>
-			</section>
+            <!-- Pets vs Cattle -->
+            <section>
+                <h3>Pets vs. Cattle</h3>
+                <ul class="content">
+                    <li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when
+                        they die.</li>
+                    <li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced.
+                        You don't care if one dies; you just get another one.</li>
+                    <li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and
+                        resilience.</li>
+                </ul>
+                <aside class="notes">
+                    This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for
+                    immutable, disposable infrastructure.
+                </aside>
+            </section>
 
-			<!-- Day 2 Section -->
-			<section>
-				<h2 class="section-title">Day 2: Advanced Topics</h2>
-			</section>
+            <!-- Day 2 Section -->
+            <section>
+                <h2 class="section-title">Day 2: Advanced Topics</h2>
+            </section>
 
-			<!-- Recap -->
-			<section>
-				<h3>Day 1 Recap & Q/A</h3>
-				<ul class="content">
-					<li>12-Factor Apps</li>
-					<li>Core Concepts (Performance, Resilience, Cost)</li>
-					<li>Security, Storage, Compute, Monitoring</li>
-					<li>Pets vs. Cattle</li>
-				</ul>
-				<p class="content" style="margin-top: 1em;">Any questions before we dive into Day 2?</p>
-				<aside class="notes">
-					A quick review of yesterday's topics to set the stage for today. We'll open the floor for any lingering questions.
-				</aside>
-			</section>
+            <!-- Recap -->
+            <section>
+                <h3>Day 1 Recap & Q/A</h3>
+                <ul class="content">
+                    <li>12-Factor Apps</li>
+                    <li>Core Concepts (Performance, Resilience, Cost)</li>
+                    <li>Security, Storage, Compute, Monitoring</li>
+                    <li>Pets vs. Cattle</li>
+                </ul>
+                <p class="content" style="margin-top: 1em;">Any questions before we dive into Day 2?</p>
+                <aside class="notes">
+                    A quick review of yesterday's topics to set the stage for today. We'll open the floor for any
+                    lingering questions.
+                </aside>
+            </section>
 
-			<!-- Containers -->
-			<section>
-				<h3>Containers on AWS</h3>
-				<div class="flex-container">
-					<img src="./img/aws-ecr.png" alt="ECR Logo" style="height: 80px;">
-					<img src="./img/aws-ecs.png" alt="ECS Logo" style="height: 80px;">
-					<img src="./img/aws-eks.png" alt="EKS Logo" style="height: 80px;">
-					<img src="./img/aws-fargate.png" alt="Fargate Logo" style="height: 80px;">
-				</div>
-				<ul class="content">
-					<li><b>ECR:</b> Store and manage your container images.</li>
-					<li><b>ECS:</b> A fully managed container orchestration service from AWS.</li>
-					<li><b>EKS:</b> Managed Kubernetes service.</li>
-					<li><b>Fargate:</b> Serverless compute for containers. No need to manage servers.</li>
-					<li>Demo: Pushing an image to a public ECR repo.</li>
-				</ul>
-				<aside class="notes">
-					Hussain will take over to discuss containers, a cornerstone of modern application deployment. We'll cover the different ways to run containers on AWS and demo ECR.
-				</aside>
-			</section>
+            <!-- Containers -->
+            <section>
+                <h3>Containers on AWS</h3>
+                <div class="flex-container">
+                    <img src="./img/aws-ecr.png" alt="ECR Logo" style="height: 80px;">
+                    <img src="./img/aws-ecs.png" alt="ECS Logo" style="height: 80px;">
+                    <img src="./img/aws-eks.png" alt="EKS Logo" style="height: 80px;">
+                    <img src="./img/aws-fargate.png" alt="Fargate Logo" style="height: 80px;">
+                </div>
+                <ul class="content">
+                    <li><b>ECR:</b> Store and manage your container images.</li>
+                    <li><b>ECS:</b> A fully managed container orchestration service from AWS.</li>
+                    <li><b>EKS:</b> Managed Kubernetes service.</li>
+                    <li><b>Fargate:</b> Serverless compute for containers. No need to manage servers.</li>
+                    <li>Demo: Pushing an image to a public ECR repo.</li>
+                </ul>
+                <aside class="notes">
+                    Hussain will take over to discuss containers, a cornerstone of modern application deployment. We'll
+                    cover the different ways to run containers on AWS and demo ECR.
+                </aside>
+            </section>
 
-			<!-- Serverless -->
-			<section>
-				<h3>Serverless with AWS Lambda</h3>
-				<ul class="content">
-					<li>Run code without provisioning or managing servers.</li>
-					<li>Pay only for the compute time you consume.</li>
-					<li>Event-driven architecture.</li>
-					<li>Ideal for microservices, data processing, and more.</li>
-				</ul>
-				<aside class="notes">
-					The next evolution of compute. We'll talk about the benefits of serverless and how Lambda works.
-				</aside>
-			</section>
+            <!-- Serverless -->
+            <section>
+                <h3>Serverless with AWS Lambda</h3>
+                <ul class="content">
+                    <li>Run code without provisioning or managing servers.</li>
+                    <li>Pay only for the compute time you consume.</li>
+                    <li>Event-driven architecture.</li>
+                    <li>Ideal for microservices, data processing, and more.</li>
+                </ul>
+                <aside class="notes">
+                    The next evolution of compute. We'll talk about the benefits of serverless and how Lambda works.
+                </aside>
+            </section>
 
-			<!-- CI/CD & GitOps -->
-			<section>
-				<h3>CI/CD & GitOps</h3>
-				<ul class="content">
-					<li><b>CI/CD (Continuous Integration/Continuous Deployment):</b> Automate your software delivery pipeline.</li>
-					<li><b>GitOps:</b> Use Git as the single source of truth for declarative infrastructure and applications.</li>
-					<li>AWS Tools: CodeCommit, CodeBuild, CodeDeploy, CodePipeline.</li>
-					<li>Demo: A look at a simple CI/CD pipeline.</li>
-				</ul>
-				<aside class="notes">
-					Hussain will explain how to automate everything from code commit to deployment, which is essential for moving fast and staying reliable.
-				</aside>
-			</section>
+            <!-- CI/CD & GitOps -->
+            <section>
+                <h3>CI/CD & GitOps</h3>
+                <ul class="content">
+                    <li><b>CI/CD (Continuous Integration/Continuous Deployment):</b> Automate your software delivery
+                        pipeline.</li>
+                    <li><b>GitOps:</b> Use Git as the single source of truth for declarative infrastructure and
+                        applications.</li>
+                    <li>AWS Tools: CodeCommit, CodeBuild, CodeDeploy, CodePipeline.</li>
+                    <li>Demo: A look at a simple CI/CD pipeline.</li>
+                </ul>
+                <aside class="notes">
+                    Hussain will explain how to automate everything from code commit to deployment, which is essential
+                    for moving fast and staying reliable.
+                </aside>
+            </section>
 
-			<!-- IaaC -->
-			<section>
-				<h3>Infrastructure as Code (IaC)</h3>
-				<ul class="content">
-					<li>Manage and provision infrastructure through code instead of manual processes.</li>
-					<li><b>Terraform:</b> Open-source, multi-cloud tool.</li>
-					<li><b>CloudFormation:</b> AWS-native IaaC service.</li>
-					<li>Enables versioning, reusability, and automation of your infrastructure.</li>
-					<li>Demo: A simple Terraform configuration.</li>
-				</ul>
-				<aside class="notes">
-					Hussain will demonstrate how to define your infrastructure in code, which is the foundation of reproducible environments and GitOps.
-				</aside>
-			</section>
+            <!-- IaC -->
+            <section>
+                <h3>Infrastructure as Code (IaC)</h3>
+                <ul class="content">
+                    <li>Manage and provision infrastructure through code instead of manual processes.</li>
+                    <li><b>Terraform:</b> Open-source, multi-cloud tool.</li>
+                    <li><b>CloudFormation:</b> AWS-native IaC service.</li>
+                    <li>Enables versioning, reusability, and automation of your infrastructure.</li>
+                    <li>Demo: A simple Terraform configuration.</li>
+                </ul>
+                <aside class="notes">
+                    Hussain will demonstrate how to define your infrastructure in code, which is the foundation of
+                    reproducible environments and GitOps.
+                </aside>
+            </section>
 
-			<!-- API Management -->
-			<section>
-				<h3>API Management</h3>
-				<ul class="content">
-					<li><b>API Gateway:</b> Create, publish, maintain, monitor, and secure APIs at any scale.</li>
-					<!-- <li><b>AppSync:</b> Managed GraphQL service for real-time data and offline capabilities.</li> -->
-				</ul>
-				<aside class="notes">
-					I (Munir) will cover this section. APIs are the front door to your services. We'll discuss how to manage them effectively using AWS services.
-				</aside>
-			</section>
+            <!-- API Management -->
+            <section>
+                <h3>API Management</h3>
+                <ul class="content">
+                    <li><b>API Gateway:</b> Create, publish, maintain, monitor, and secure APIs at any scale.</li>
+                    <!-- <li><b>AppSync:</b> Managed GraphQL service for real-time data and offline capabilities.</li> -->
+                </ul>
+                <aside class="notes">
+                    I (Munir) will cover this section. APIs are the front door to your services. We'll discuss how to
+                    manage them effectively using AWS services.
+                </aside>
+            </section>
 
-			<!-- Q&A -->
-			<section>
-				<h3>Q&A</h3>
-				<p class="content" style="text-align: center;">Any final questions?</p>
-				<aside class="notes">
-					Open floor for any remaining questions about the topics covered or anything else related to cloud computing.
-				</aside>
-			</section>
+            <!-- Q&A -->
+            <section>
+                <h3>Q&A</h3>
+                <p class="content" style="text-align: center;">Any final questions?</p>
+                <aside class="notes">
+                    Open floor for any remaining questions about the topics covered or anything else related to cloud
+                    computing.
+                </aside>
+            </section>
 
-			<!-- Feedback -->
-			<section>
-				<h2 class="section-title">Feedback</h2>
-				<p class="content" style="text-align: center;">We value your feedback to improve future workshops.</p>
-				<img src="./img/feedback.jpg" alt="Feedback QR Code" style="width: 40%; margin-top: 20px;">
-				<aside class="notes">
-					Thank you for attending. Please take a moment to provide your feedback. It helps us make these workshops better.
-				</aside>
-			</section>
+            <!-- Feedback -->
+            <section>
+                <h2 class="section-title">Feedback</h2>
+                <p class="content" style="text-align: center;">We value your feedback to improve future workshops.</p>
+                <img src="./img/feedback.jpg" alt="Feedback QR Code" style="width: 40%; margin-top: 20px;">
+                <aside class="notes">
+                    Thank you for attending. Please take a moment to provide your feedback. It helps us make these
+                    workshops better.
+                </aside>
+            </section>
 
-		</div>
-	</div>
+        </div>
+    </div>
 
-	<script src="dist/reveal.js"></script>
-	<script src="plugin/notes/notes.js"></script>
-	<script src="plugin/markdown/markdown.js"></script>
-	<script src="plugin/highlight/highlight.js"></script>
-	<script src="plugin/copycode/copycode.js"></script>
-	<script>
-		Reveal.initialize({
-			hash: true,
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode],
-			//slideNumber: true,
-		});
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/copycode/copycode.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode],
+            //slideNumber: true,
+        });
 
-		// Custom code highlighting
-		hljs.registerLanguage('dockerfile', function(hljs) {
-			return hljs.getLanguage('dockerfile');
-		});
-		hljs.registerLanguage('bash', function(hljs) {
-			return hljs.getLanguage('bash');
-		});
-		hljs.registerLanguage('yaml', function(hljs) {
-			return hljs.getLanguage('yaml');
-		});
-		hljs.highlightAll();
-	</script>
+        // Custom code highlighting
+        hljs.registerLanguage('dockerfile', function (hljs) {
+            return hljs.getLanguage('dockerfile');
+        });
+        hljs.registerLanguage('bash', function (hljs) {
+            return hljs.getLanguage('bash');
+        });
+        hljs.registerLanguage('yaml', function (hljs) {
+            return hljs.getLanguage('yaml');
+        });
+        hljs.highlightAll();
+    </script>
 </body>
 
 </html>
