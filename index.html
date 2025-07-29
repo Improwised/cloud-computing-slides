@@ -633,11 +633,9 @@
           <img src="./img/aws-fargate.svg" alt="Fargate Logo" style="height: 80px;" loading="lazy">
         </div>
         <ul class="content">
-          <li><b>ECR:</b> Store and manage your container images.</li>
-          <li><b>ECS:</b> A fully managed container orchestration service from AWS.</li>
-          <li><b>EKS:</b> Managed Kubernetes service.</li>
-          <li><b>Fargate:</b> Serverless compute for containers. No need to manage servers.</li>
-          <li>Demo: Pushing an image to a public ECR repo.</li>
+          <li><b>ECR: </b>Store and manage your container images.</li>
+          <li><b>ECS: </b>A fully managed container orchestration service from AWS.</li>
+          <li><b>EKS: </b>Managed Kubernetes service.</li>
         </ul>
         <aside class="notes">
           Hussain will take over to discuss containers, a cornerstone of modern application deployment. We'll
@@ -647,12 +645,13 @@
 
       <!-- Serverless -->
       <section>
-        <h3>Serverless with AWS Lambda</h3>
+        <h3>Serverless with AWS Lambda and AWS Fargate</h3>
         <ul class="content">
-          <li>Run code without provisioning or managing servers.</li>
+          <li><b>AWS Lambda:</b> Run code without provisioning or managing servers.</li>
+          <li><b>AWS Fargate:</b> Run containers without managing servers or clusters.</li>
           <li>Pay only for the compute time you consume.</li>
-          <li>Event-driven architecture.</li>
-          <li>Ideal for microservices, data processing, and more.</li>
+          <li>Ideal for event-driven architectures and microservices.</li>
+          <li>Supports multiple programming languages and runtimes.</li>
         </ul>
         <aside class="notes">
           The next evolution of compute. We'll talk about the benefits of serverless and how Lambda works.
@@ -668,7 +667,6 @@
           <li><b>GitOps:</b> Use Git as the single source of truth for declarative infrastructure and
             applications.</li>
           <li>AWS Tools: CodeCommit, CodeBuild, CodeDeploy, CodePipeline.</li>
-          <li>Demo: A look at a simple CI/CD pipeline.</li>
         </ul>
         <aside class="notes">
           Hussain will explain how to automate everything from code commit to deployment, which is essential
@@ -684,7 +682,6 @@
           <li><b>Terraform:</b> Open-source, multi-cloud tool.</li>
           <li><b>CloudFormation:</b> AWS-native IaC service.</li>
           <li>Enables versioning, reusability, and automation of your infrastructure.</li>
-          <li>Demo: A simple Terraform configuration.</li>
         </ul>
         <aside class="notes">
           Hussain will demonstrate how to define your infrastructure in code, which is the foundation of
