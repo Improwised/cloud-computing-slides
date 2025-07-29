@@ -177,9 +177,6 @@
               <li>Version Control</li>
               <li>Core Cloud Concepts</li>
               <li>Security Deep Dive</li>
-              <li>Storage Solutions (S3, EBS)</li>
-              <li>Compute (EC2, Lightsail)</li>
-              <li>Monitoring with CloudWatch</li>
               <li>Pets vs. Cattle Analogy</li>
             </ul>
           </div>
@@ -187,6 +184,9 @@
             <h3>Day 2: Advanced Topics</h3>
             <ul class="content">
               <li>Recap</li>
+              <li>Storage Solutions (S3, EBS)</li>
+              <li>Compute (EC2, Lightsail)</li>
+              <li>Monitoring with CloudWatch</li>
               <li>Containers (ECR, ECS, EKS, Fargate)</li>
               <li>Serverless Computing (Lambda)</li>
               <li>CI/CD & GitOps</li>
@@ -354,6 +354,58 @@
             and what they can do with them. We'll cover best practices for setting up IAM policies and
             roles.
             Demo for creating a user, roles, policies and assigning permissions.
+          </aside>
+        </section>
+      </section>
+
+      <!-- Pets vs Cattle -->
+      <section>
+        <section>
+          <h3>Pets vs. Cattle</h3>
+          <img src="./img/petvscattle.jpeg" alt="Pets vs. Cattle" loading="lazy">
+        </section>
+        <section>
+          <h3>Pets vs. Cattle</h3>
+          <ul class="content">
+            <li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when
+              they die.</li>
+            <li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced.
+              You don't care if one dies; you just get another one.</li>
+            <li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and
+              resilience.</li>
+          </ul>
+          <aside class="notes">
+            This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for
+            immutable, disposable infrastructure.
+          </aside>
+        </section>
+      </section>
+
+
+      <!-- Day 2 Section -->
+      <section>
+        <h2 class="section-title">Day 2: Advanced Topics</h2>
+      </section>
+
+      <!-- Recap -->
+      <section>
+        <section>
+          <h2>Day 1 Recap & Q/A</h2>
+        </section>
+        <section>
+          <ul class="content">
+            <li>12-Factor Apps</li>
+            <li>Version Control</li>
+            <li>Core Concepts (Performance, Resilience, Cost)</li>
+            <li>Security</li>
+            <li>Pets vs. Cattle</li>
+          </ul>
+        </section>
+        <section>
+          <p class="content" style="margin-top: 1em;">Any questions before we dive into Day 2?</p>
+          <aside class="notes">
+            A quick review of yesterday's topics to set the stage for today. We'll open the floor for any
+            lingering questions.
           </aside>
         </section>
       </section>
@@ -569,52 +621,6 @@
             ahead of issues and optimize your AWS workloads.
           </aside>
         </section>
-      </section>
-
-      <!-- Pets vs Cattle -->
-      <section>
-        <section>
-          <h3>Pets vs. Cattle</h3>
-          <img src="./img/petvscattle.jpeg" alt="Pets vs. Cattle" loading="lazy">
-        </section>
-        <section>
-          <h3>Pets vs. Cattle</h3>
-          <ul class="content">
-            <li><b>Pets:</b> Servers that are unique, lovingly tended, and hard to replace. You get upset when
-              they die.</li>
-            <li><b>Cattle:</b> Servers that are identical, created from a template, and designed to be replaced.
-              You don't care if one dies; you just get another one.</li>
-            <li>The cloud model encourages treating servers as cattle, not pets. This is key for scalability and
-              resilience.</li>
-          </ul>
-          <aside class="notes">
-            This is a crucial mindset shift when moving to the cloud. We'll discuss why you should aim for
-            immutable, disposable infrastructure.
-          </aside>
-        </section>
-
-
-      </section>
-
-      <!-- Day 2 Section -->
-      <section>
-        <h2 class="section-title">Day 2: Advanced Topics</h2>
-      </section>
-
-      <!-- Recap -->
-      <section>
-        <h3>Day 1 Recap & Q/A</h3>
-        <ul class="content">
-          <li>12-Factor Apps</li>
-          <li>Core Concepts (Performance, Resilience, Cost)</li>
-          <li>Security, Storage, Compute, Monitoring</li>
-          <li>Pets vs. Cattle</li>
-        </ul>
-        <p class="content" style="margin-top: 1em;">Any questions before we dive into Day 2?</p>
-        <aside class="notes">
-          A quick review of yesterday's topics to set the stage for today. We'll open the floor for any
-          lingering questions.
-        </aside>
       </section>
 
       <!-- Containers -->
